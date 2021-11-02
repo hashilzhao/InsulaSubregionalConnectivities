@@ -17,11 +17,11 @@ for sub in  $(echo $b1s | cut -f$sta-$((sta+num)) -d " ")
 do
 
   echo $sub
-  sed -e "s/sub25632/${sub}/g" ${basedir}/design/regressor.fsf > ${datadir}/${sub}/analysis/regressor.fsf
-  feat ${datadir}/${sub}/analysis/regressor.fsf
+  sed -e "s/sub25632/${sub}/g" ${basedir}/design/confounders_regression.fsf > ${datadir}/${sub}/analysis/confounders_regression.fsf
+  feat ${datadir}/${sub}/analysis/confounders_regression.fsf
 
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/regressor.fsf '>' ${datadir}/${sub}/analysis/regressor.fsf >> ${basedir}/logs/pro_log_${sub}_s4.txt
-  echo feat ${datadir}/${sub}/analysis/regressor.fsf >> $basedir/logs/pro_log_${sub}_s4.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/confounders_regression.fsf '>' ${datadir}/${sub}/analysis/confounders_regression.fsf >> ${basedir}/logs/pro_log_${sub}_s4.txt
+  echo feat ${datadir}/${sub}/analysis/confounders_regression.fsf >> $basedir/logs/pro_log_${sub}_s4.txt
   
 done
 }
