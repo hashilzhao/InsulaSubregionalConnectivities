@@ -3,41 +3,41 @@ Code accompanying the paper: Zhao, H. et.al. (202x). How distinct functional ins
 # Insular subregional functional connectivity analysis 
 The processing pipeline of functional connectivity were based on the below codes step by step:
 
-Step 0: non–brain tissue elimination using bet2
+Step 00: non–brain tissue elimination using bet2
 
-s0_non-brain_tissue_elimination.sh
+s00_non-brain_tissue_elimination.sh
 
-Step 1: MPRAGE Images segmenation & preprocessing including removing head motion artifact using MCFLIRT, filtering using a non-linear high pass filter (100s), spatially smoothing using a 5-mm full-width-half-maximum (FWHM) Gaussian kernel, and grand-mean intensity normalization
+Step 01: MPRAGE Images segmenation & preprocessing including removing head motion artifact using MCFLIRT, filtering using a non-linear high pass filter (100s), spatially smoothing using a 5-mm full-width-half-maximum (FWHM) Gaussian kernel, and grand-mean intensity normalization
 
-s1_preprocessing.sh
+s01_preprocessing.sh
 preprocessing.fsf
 
-Step 2: SEEDS transformation of seeds from standard space into individuals' space & Signals extraction of the eight confounders including six motion parameters, white matter signal, cerebrospinal fluid signal, and their associated derivatives.
+Step 02: SEEDS transformation of seeds from standard space into individuals' space & Signals extraction of the eight confounders including six motion parameters, white matter signal, cerebrospinal fluid signal, and their associated derivatives.
 
-s2_signal_extractions.sh
+s02_signal_extractions.sh
 
-Step 3: normalizing the singals of extracted eight confounders in step 2 above.
+Step 03: normalizing the singals of extracted eight confounders in step 2 above.
 
-s3_confounders_normalization.sh
-s3_confounders_normalization.m
+s03_confounders_normalization.sh
+s03_confounders_normalization.m
 
-Step 4: regressing eight confounders.
+Step 04: regressing eight confounders.
 
-s4_confounders_regression.sh
+s04_confounders_regression.sh
 confounders_regression.fsf
 
-Step 5: SEEDS signals extraction & Residuals Normalization
+Step 05: SEEDS signals extraction & Residuals Normalization
 
-s5_residuals_normalization.sh
+s05_residuals_normalization.sh
 
-Step 6: Normalization of extracted SEEDS signals sequences.
+Step 06: Normalization of extracted SEEDS signals sequences.
 
-s6_seeds_normalization.sh
-s6_seed_normalization.m
+s06_seeds_normalization.sh
+s06_seeds_normalization.m
 
-Step 7: SEEDS-based functional connectivity in individuals
+Step 07: SEEDS-based functional connectivity in individuals
 
-s7_seeds_FC.sh
+s07_seeds_FC.sh
 lDAI.fsf
 lVAI.fsf
 lPI.fsf
@@ -45,8 +45,42 @@ rDAI.fsf
 rVAI.fsf
 rPI.fsf
 
-Step 8: 
+Step 08: copying transformation files to runing groups analysis
 
+s08_transformation_copying.sh
 
+Step 09: FC comparison between SEEDS
 
+s09_seeds_comparison.sh
+lDAI_lVAI.fsf
+lDAI_lPI.fsf
+lVAI_lPI.fsf
+rDAI_rVAI.fsf
+rDAI_rPI.fsf
+rVAI_rPI.fsf
 
+Steps 10: running group analysis
+
+s10_group_analysis.sh
+glDAI.fsf
+glVAI.fsf
+glPI.fsf
+grDAI.fsf
+grVAI.fsf
+grPI.fsf
+glDAI_lVAI.fsf
+glDAI_lPI.fsf
+glVAI_lPI.fsf
+grDAI_rVAI.fsf
+grDAI_rPI.fsf
+grVAI_rPI.fsf
+
+Step 11: running ROI analysis: extracting ROIs' time series.
+
+s11_roi_signals_extraction.sh
+ROIs.zip
+
+Step 12: normalization of ROIs' time series, and calculating the correlations between insular SEEDs and ROIs.
+
+s12_roi_correlation.sh
+s12_roi_correlation.m
