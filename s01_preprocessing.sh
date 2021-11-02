@@ -1,4 +1,5 @@
-## pwd = /expdata2/insula.validation
+# this script is for InsulaSubregionalConnectivities study, writen by Haichao Zhao in 2021-06-01
+# pwd = /expdata2/insula.validation
 
 logdate=`date +%Y%m%d_%T`
 basedir=/expdata2/insula.validation
