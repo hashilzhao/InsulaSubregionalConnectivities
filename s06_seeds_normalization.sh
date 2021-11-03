@@ -7,4 +7,4 @@ historylog=`date`;
 
 matlab -nosplash -nodesktop -r "s06_seeds_normalization;exit"
 
-echo matlab -nosplash -nodesktop -r "s06_seeds_normalization;exit" >> ${basedir}/logs/s6.txt
+echo matlab -nosplash -nodesktop -r "s06_seeds_normalization;exit" >> ${basedir}/logs/s06.txt
