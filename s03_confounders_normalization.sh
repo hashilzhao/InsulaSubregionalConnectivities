@@ -7,4 +7,4 @@ historylog=`date`;
 
 matlab -nosplash -nodesktop -r "s03_confounders_normalization;exit"
 
-echo matlab -nosplash -nodesktop -r "s03_confounders_normalization;exit" >> ${basedir}/logs/s3.txt
+echo matlab -nosplash -nodesktop -r "s03_confounders_normalization;exit" >> ${basedir}/logs/s03.txt
