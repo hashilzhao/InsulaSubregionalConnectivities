@@ -55,6 +55,8 @@ for sub=1:length(sublist)
     cd(base_dir)
 end
 
+%merge individuals' files
+
 sublist=dir('data/sub*');
 
 for sub=1:length(sublist)
