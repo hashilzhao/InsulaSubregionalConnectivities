@@ -20,9 +20,9 @@ do
   feat ${datadir}/${sub}/analysis/prepro.fsf
   fast -t 1 -n 3 -H 0.1 -I 4 -l 20.0 -o ${datadir}/${sub}/data/mprage_brain ${datadir}/${sub}/data/mprage_brain
 
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/prepro.fsf '>' ${datadir}/${sub}/analysis/prepro.fsf >> ${basedir}/logs/pro_log_${sub}_s1.txt
-  echo feat ${datadir}/${sub}/analysis/prepro.fsf >> $basedir/logs/pro_log_${sub}_s1.txt
-  echo fast -t 1 -n 3 -H 0.1 -I 4 -l 20.0 -o ${datadir}/${sub}/data/mprage_brain ${datadir}/${sub}/data/mprage_brain >> ${basedir}/logs/pro_log_${sub}_s1.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/prepro.fsf '>' ${datadir}/${sub}/analysis/prepro.fsf >> ${basedir}/logs/${sub}_s1.txt
+  echo feat ${datadir}/${sub}/analysis/prepro.fsf >> $basedir/logs/${sub}_s1.txt
+  echo fast -t 1 -n 3 -H 0.1 -I 4 -l 20.0 -o ${datadir}/${sub}/data/mprage_brain ${datadir}/${sub}/data/mprage_brain >> ${basedir}/logs/${sub}_s1.txt
 done
 }
 pipe 1 9 &
