@@ -23,12 +23,12 @@ do
   cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_rVAI.feat/
   cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_rPI.feat/
 
-  echo cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_lDAI.feat/ >> ${basedir}/logs/${sub}_s8.txt
-  echo cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_lVAI.feat/ >> ${basedir}/logs/${sub}_s8.txt
-  echo cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_lPI.feat/ >> ${basedir}/logs/${sub}_s8.txt
-  echo cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_rDAI.feat/ >> ${basedir}/logs/${sub}_s8.txt
-  echo cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_rVAI.feat/ >> ${basedir}/logs/${sub}_s8.txt
-  echo cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_rPI.feat/ >> ${basedir}/logs/${sub}_s8.txt
+  echo cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_lDAI.feat/ >> ${basedir}/logs/${sub}_s08.txt
+  echo cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_lVAI.feat/ >> ${basedir}/logs/${sub}_s08.txt
+  echo cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_lPI.feat/ >> ${basedir}/logs/${sub}_s08.txt
+  echo cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_rDAI.feat/ >> ${basedir}/logs/${sub}_s08.txt
+  echo cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_rVAI.feat/ >> ${basedir}/logs/${sub}_s08.txt
+  echo cp -r ${datadir}/${sub}/analysis/prepro.feat/reg ${datadir}/${sub}/analysis/corr_rPI.feat/ >> ${basedir}/logs/${sub}_s08.txt
    
 done
 }
