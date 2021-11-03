@@ -8,3 +8,5 @@ historylog=`date`;
 matlab -nosplash -nodesktop -r "s12_roi_correlation;exit"
 
 echo matlab -nosplash -nodesktop -r "s12_roi_correlation;exit" >> ${basedir}/logs/s12.txt
+
+echo it is done !!
