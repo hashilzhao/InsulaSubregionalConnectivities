@@ -4,8 +4,12 @@
 logdate=`date +%Y%m%d_%T`
 basedir=/expdata2/insula.validation
 datadir=/expdata2/insula.validation/data
+designdir=/expdata2/insula.validation/design
 
 mkdir -p ${basedir}/logs
+mkdir -p ${designdir}
+
+tar -xzvf Designs.tar.gz -C ${designdir}/
 
 b1s=$(ls ${datadir})
 pipe (){
@@ -16,8 +20,8 @@ echo "process $sta : $((sta + num))"
 for sub in  $(echo $b1s | cut -f$sta-$((sta+num)) -d " ")
 do
   echo $sub
-  sed -e "s/sub25632/${sub}/g" ${basedir}/design/prepro.fsf > ${datadir}/${sub}/analysis/prepro.fsf
-  feat ${datadir}/${sub}/analysis/prepro.fsf
+  sed -e "s/sub25632/${sub}/g" ${designdir}/preprocessing.fsf > ${datadir}/${sub}/analysis/preprocessing.fsf
+  feat ${datadir}/${sub}/analysis/preprocessing.fsf
   fast -t 1 -n 3 -H 0.1 -I 4 -l 20.0 -o ${datadir}/${sub}/data/mprage_brain ${datadir}/${sub}/data/mprage_brain
 
   echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/prepro.fsf '>' ${datadir}/${sub}/analysis/prepro.fsf >> ${basedir}/logs/${sub}_s01.txt
