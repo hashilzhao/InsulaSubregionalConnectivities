@@ -4,6 +4,7 @@
 logdate=`date +%Y%m%d_%T`
 basedir=/expdata2/insula.validation
 datadir=/expdata2/insula.validation/data
+designdir=/expdata2/insula.validation/design
 
 mkdir -p ${basedir}/logs
 
@@ -17,10 +18,10 @@ for sub in  $(echo $b1s | cut -f$sta-$((sta+num)) -d " ")
 do
 
   echo $sub
-  sed -e "s/sub25632/${sub}/g" ${basedir}/design/confounders_regression.fsf > ${datadir}/${sub}/analysis/confounders_regression.fsf
+  sed -e "s/sub25632/${sub}/g" ${designdir}/confounders_regression.fsf > ${datadir}/${sub}/analysis/confounders_regression.fsf
   feat ${datadir}/${sub}/analysis/confounders_regression.fsf
 
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/confounders_regression.fsf '>' ${datadir}/${sub}/analysis/confounders_regression.fsf >> ${basedir}/logs/${sub}_s04.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${designdir}/confounders_regression.fsf '>' ${datadir}/${sub}/analysis/confounders_regression.fsf >> ${basedir}/logs/${sub}_s04.txt
   echo feat ${datadir}/${sub}/analysis/confounders_regression.fsf >> $basedir/logs/${sub}_s04.txt
   
 done
