@@ -1,7 +1,7 @@
 ## pwd is /expdata2/insula.validation
 basedir=/expdata2/insula.validation
 datadir=/expdata2/insula.validation/data
-dir_roi=/expdata2/insula.validation/b_roi/new_FC_insula_Mask/2mm
+dir_roi=/expdata2/insula.validation/b_roi
 
 b1s=$(ls ${datadir})
 pipe (){
