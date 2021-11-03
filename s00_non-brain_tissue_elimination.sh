@@ -82,7 +82,7 @@ pipe 201 9 &
 pipe 211 9 &
 pipe 221 6 &
 wait
-echo -e "time-consuming: $SECONDS seconds" #显示脚本执行耗时
+echo -e "time-consuming: $SECONDS seconds" 
 
 echo '</BODY></HTML>' >> ${datadir}/slicesdir/index.html
 echo 'Finished. To view, point your web browser at'
