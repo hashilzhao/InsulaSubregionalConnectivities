@@ -21,16 +21,16 @@ do
   for roi in lDAI lPI lVAI rDAI rPI rVAI
   do
     fslmeants -i ${datadir}/${sub}/analysis/regressor.feat/stats/res4d -m ${datadir}/${sub}/roi/standard2func_${roi} -o ${datadir}/${sub}/roi/roi_${roi}.txt
-     echo fslmeants -i ${datadir}/${sub}/analysis/regressor.feat/stats/res4d -m ${datadir}/${sub}/roi/standard2func_${roi} -o ${datadir}/${sub}/roi/roi_${roi}.txt >> ${basedir}/logs/pro_log_${sub}_s5.txt
+     echo fslmeants -i ${datadir}/${sub}/analysis/regressor.feat/stats/res4d -m ${datadir}/${sub}/roi/standard2func_${roi} -o ${datadir}/${sub}/roi/roi_${roi}.txt >> ${basedir}/logs/${sub}_s5.txt
   done
 
   fslmaths ${datadir}/${sub}/analysis/regressor.feat/stats/res4d -Tmean ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_mean
   fslmaths ${datadir}/${sub}/analysis/regressor.feat/stats/res4d -Tstd ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_std
   fslmaths ${datadir}/${sub}/analysis/regressor.feat/stats/res4d -sub ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_mean -div ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_std -add 100 ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_scaled
 
-  echo fslmaths ${datadir}/${sub}/analysis/regressor.feat/stats/res4d -Tmean ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_mean >> ${basedir}/logs/pro_log_${sub}_s5.txt
-  echo fslmaths ${datadir}/${sub}/analysis/regressor.feat/stats/res4d -Tstd ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_std >> ${basedir}/logs/pro_log_${sub}_s5.txt
-  echo fslmaths ${datadir}/${sub}/analysis/regressor.feat/stats/res4d -sub ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_mean -div ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_std -add 100 ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_scaled  >> ${basedir}/logs/pro_log_${sub}_s5.txt
+  echo fslmaths ${datadir}/${sub}/analysis/regressor.feat/stats/res4d -Tmean ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_mean >> ${basedir}/logs/${sub}_s5.txt
+  echo fslmaths ${datadir}/${sub}/analysis/regressor.feat/stats/res4d -Tstd ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_std >> ${basedir}/logs/${sub}_s5.txt
+  echo fslmaths ${datadir}/${sub}/analysis/regressor.feat/stats/res4d -sub ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_mean -div ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_std -add 100 ${datadir}/${sub}/analysis/regressor.feat/stats/res4d_scaled  >> ${basedir}/logs/${sub}_s5.txt
 
 done
 }
