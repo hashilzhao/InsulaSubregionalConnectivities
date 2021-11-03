@@ -20,8 +20,8 @@ do
   sed -e "s/sub25632/${sub}/g" ${basedir}/design/confounders_regression.fsf > ${datadir}/${sub}/analysis/confounders_regression.fsf
   feat ${datadir}/${sub}/analysis/confounders_regression.fsf
 
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/confounders_regression.fsf '>' ${datadir}/${sub}/analysis/confounders_regression.fsf >> ${basedir}/logs/${sub}_s4.txt
-  echo feat ${datadir}/${sub}/analysis/confounders_regression.fsf >> $basedir/logs/${sub}_s4.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/confounders_regression.fsf '>' ${datadir}/${sub}/analysis/confounders_regression.fsf >> ${basedir}/logs/${sub}_s04.txt
+  echo feat ${datadir}/${sub}/analysis/confounders_regression.fsf >> $basedir/logs/${sub}_s04.txt
   
 done
 }
