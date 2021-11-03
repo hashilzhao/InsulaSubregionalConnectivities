@@ -4,6 +4,7 @@
 logdate=`date +%Y%m%d_%T`
 basedir=/expdata2/insula.validation
 datadir=/expdata2/insula.validation/data
+designdir=/expdata2/insula.validation/design
 
 mkdir -p ${basedir}/logs
 
@@ -16,12 +17,12 @@ echo "process $sta : $((sta + num))"
 for sub in  $(echo $b1s | cut -f$sta-$((sta+num)) -d " ")
 do
   echo $sub
-  sed -e "s/sub25632/${sub}/g" ${basedir}/design/lDAI_lPI.fsf > ${datadir}/${sub}/analysis/lDAI_lPI.fsf
-  sed -e "s/sub25632/${sub}/g" ${basedir}/design/lDAI_lVAI.fsf > ${datadir}/${sub}/analysis/lDAI_lVAI.fsf
-  sed -e "s/sub25632/${sub}/g" ${basedir}/design/lVAI_lPI.fsf > ${datadir}/${sub}/analysis/lVAI_lPI.fsf
-  sed -e "s/sub25632/${sub}/g" ${basedir}/design/rDAI_rPI.fsf > ${datadir}/${sub}/analysis/rDAI_rPI.fsf
-  sed -e "s/sub25632/${sub}/g" ${basedir}/design/rDAI_rVAI.fsf > ${datadir}/${sub}/analysis/rDAI_rVAI.fsf
-  sed -e "s/sub25632/${sub}/g" ${basedir}/design/rVAI_rPI.fsf > ${datadir}/${sub}/analysis/rVAI_rPI.fsf
+  sed -e "s/sub25632/${sub}/g" ${designdir}/lDAI_lPI.fsf > ${datadir}/${sub}/analysis/lDAI_lPI.fsf
+  sed -e "s/sub25632/${sub}/g" ${designdir}/lDAI_lVAI.fsf > ${datadir}/${sub}/analysis/lDAI_lVAI.fsf
+  sed -e "s/sub25632/${sub}/g" ${designdir}/lVAI_lPI.fsf > ${datadir}/${sub}/analysis/lVAI_lPI.fsf
+  sed -e "s/sub25632/${sub}/g" ${designdir}/rDAI_rPI.fsf > ${datadir}/${sub}/analysis/rDAI_rPI.fsf
+  sed -e "s/sub25632/${sub}/g" ${designdir}/rDAI_rVAI.fsf > ${datadir}/${sub}/analysis/rDAI_rVAI.fsf
+  sed -e "s/sub25632/${sub}/g" ${designdir}/rVAI_rPI.fsf > ${datadir}/${sub}/analysis/rVAI_rPI.fsf
   
   feat ${datadir}/${sub}/analysis/lDAI_lPI.fsf
   feat ${datadir}/${sub}/analysis/lDAI_lVAI.fsf
@@ -30,12 +31,12 @@ do
   feat ${datadir}/${sub}/analysis/rDAI_rVAI.fsf
   feat ${datadir}/${sub}/analysis/rVAI_rPI.fsf
   
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/lDAI_lPI.fsf '>' ${datadir}/${sub}/analysis/lDAI_lPI.fsf >> ${basedir}/logs/${sub}_s09.txt
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/lDAI_lVAI.fsf '>' ${datadir}/${sub}/analysis/lDAI_lVAI.fsf >> ${basedir}/logs/${sub}_s09.txt
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/lVAI_lPI.fsf '>' ${datadir}/${sub}/analysis/lVAI_lPI.fsf >> ${basedir}/logs/${sub}_s09.txt
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/rDAI_rPI.fsf '>' ${datadir}/${sub}/analysis/rDAI_rPI.fsf >> ${basedir}/logs/${sub}_s09.txt
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/rDAI_rVAI.fsf '>' ${datadir}/${sub}/analysis/rDAI_rVAI.fsf >> ${basedir}/logs/${sub}_s09.txt
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/rVAI_rPI.fsf '>' ${datadir}/${sub}/analysis/rVAI_rPI.fsf >> ${basedir}/logs/${sub}_s09.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${designdir}/lDAI_lPI.fsf '>' ${datadir}/${sub}/analysis/lDAI_lPI.fsf >> ${basedir}/logs/${sub}_s09.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${designdir}/lDAI_lVAI.fsf '>' ${datadir}/${sub}/analysis/lDAI_lVAI.fsf >> ${basedir}/logs/${sub}_s09.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${designdir}/lVAI_lPI.fsf '>' ${datadir}/${sub}/analysis/lVAI_lPI.fsf >> ${basedir}/logs/${sub}_s09.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${designdir}/rDAI_rPI.fsf '>' ${datadir}/${sub}/analysis/rDAI_rPI.fsf >> ${basedir}/logs/${sub}_s09.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${designdir}/rDAI_rVAI.fsf '>' ${datadir}/${sub}/analysis/rDAI_rVAI.fsf >> ${basedir}/logs/${sub}_s09.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${designdir}/rVAI_rPI.fsf '>' ${datadir}/${sub}/analysis/rVAI_rPI.fsf >> ${basedir}/logs/${sub}_s09.txt
 
   echo feat ${datadir}/${sub}/analysis/lDAI_lPI.fsf >> ${basedir}/logs/${sub}_s09.txt
   echo feat ${datadir}/${sub}/analysis/lDAI_lVAI.fsf >> ${basedir}/logs/${sub}_s09.txt
