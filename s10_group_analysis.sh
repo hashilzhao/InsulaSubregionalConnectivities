@@ -32,4 +32,4 @@ echo feat ${basedir}/design/grDAI_rVAI.fsf '&' >> ${basedir}/logs/s10.txt
 echo feat ${basedir}/design/grVAI_rPI.fsf >> ${basedir}/logs/s10.txt
 
 
-echo -e "time-consuming: $SECONDS seconds" #显示脚本执行耗时
+echo -e "time-consuming: $SECONDS seconds" 
