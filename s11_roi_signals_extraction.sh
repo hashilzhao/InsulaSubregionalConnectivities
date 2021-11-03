@@ -56,4 +56,4 @@ pipe 201 9 &
 pipe 211 9 &
 pipe 221 6 &
 wait
-echo -e "time-consuming: $SECONDS seconds" #显示脚本执行耗时
+echo -e "time-consuming: $SECONDS seconds" 
