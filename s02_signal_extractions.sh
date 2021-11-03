@@ -56,44 +56,44 @@ do
   flirt -in ${datadir}/${sub}/roi/fnirted_standard2highres_rPI -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/roi/standard2func_rPI
   fslmaths ${datadir}/${sub}/roi/standard2func_rPI -thr 0.5 -bin ${datadir}/${sub}/roi/standard2func_rPI
 
-  echo flirt -in ${datadir}/${sub}/data/mprage_brain_pve_0.nii.gz -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/analysis/prepro.feat/high2func_csf.nii.gz >> ${basedir}/logs/${sub}_s2.txt
-  echo flirt -in ${datadir}/${sub}/data/mprage_brain_pve_2.nii.gz -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/analysis/prepro.feat/high2func_wm.nii.gz >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmeants -i ${datadir}/${sub}/analysis/prepro.feat/filtered_func_data -m ${datadir}/${sub}/analysis/prepro.feat/high2func_csf.nii.gz '>' ${datadir}/${sub}/analysis/prepro.feat/csf.txt >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmeants -i ${datadir}/${sub}/analysis/prepro.feat/filtered_func_data -m ${datadir}/${sub}/analysis/prepro.feat/high2func_wm.nii.gz '>' ${datadir}/${sub}/analysis/prepro.feat/wm.txt >> ${basedir}/logs/${sub}_s2.txt
-  echo paste -d '' ${datadir}/${sub}/analysis/prepro.feat/mc/prefiltered_func_data_mcf.par '>' ${datadir}/${sub}/analysis/prepro.feat/confoundevs.txt >> ${basedir}/logs/${sub}_s2.txt
+  echo flirt -in ${datadir}/${sub}/data/mprage_brain_pve_0.nii.gz -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/analysis/prepro.feat/high2func_csf.nii.gz >> ${basedir}/logs/${sub}_s02.txt
+  echo flirt -in ${datadir}/${sub}/data/mprage_brain_pve_2.nii.gz -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/analysis/prepro.feat/high2func_wm.nii.gz >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmeants -i ${datadir}/${sub}/analysis/prepro.feat/filtered_func_data -m ${datadir}/${sub}/analysis/prepro.feat/high2func_csf.nii.gz '>' ${datadir}/${sub}/analysis/prepro.feat/csf.txt >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmeants -i ${datadir}/${sub}/analysis/prepro.feat/filtered_func_data -m ${datadir}/${sub}/analysis/prepro.feat/high2func_wm.nii.gz '>' ${datadir}/${sub}/analysis/prepro.feat/wm.txt >> ${basedir}/logs/${sub}_s02.txt
+  echo paste -d '' ${datadir}/${sub}/analysis/prepro.feat/mc/prefiltered_func_data_mcf.par '>' ${datadir}/${sub}/analysis/prepro.feat/confoundevs.txt >> ${basedir}/logs/${sub}_s02.txt
 
-  echo flirt -in ${basedir}/b_roi/lDAI -ref ${datadir}/${sub}/data/mprage_brain -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/standard2highres.mat -out ${datadir}/${sub}/roi/standard2highres_lDAI >> ${basedir}/logs/${sub}_s2.txt
-  echo applywarp --ref=${datadir}/${sub}/data/mprage_brain --in=${datadir}/${sub}/roi/standard2highres_lDAI --out=${datadir}/${sub}/roi/fnirted_standard2highres_lDAI >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmaths ${datadir}/${sub}/roi/fnirted_standard2highres_lDAI -thr 0.5 -bin ${datadir}/${sub}/roi/fnirted_standard2highres_lDAI >> ${basedir}/logs/${sub}_s2.txt
-  echo flirt -in ${datadir}/${sub}/roi/fnirted_standard2highres_lDAI -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/roi/standard2func_lDAI >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmaths ${datadir}/${sub}/roi/standard2func_lDAI -thr 0.5 -bin ${datadir}/${sub}/roi/standard2func_lDAI >> ${basedir}/logs/${sub}_s2.txt
-  echo flirt -in ${basedir}/b_roi/rDAI -ref ${datadir}/${sub}/data/mprage_brain -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/standard2highres.mat -out ${datadir}/${sub}/roi/standard2highres_rDAI >> ${basedir}/logs/${sub}_s2.txt
-  echo applywarp --ref=${datadir}/${sub}/data/mprage_brain --in=${datadir}/${sub}/roi/standard2highres_rDAI --out=${datadir}/${sub}/roi/fnirted_standard2highres_rDAI >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmaths ${datadir}/${sub}/roi/fnirted_standard2highres_rDAI -thr 0.5 -bin ${datadir}/${sub}/roi/fnirted_standard2highres_rDAI >> ${basedir}/logs/${sub}_s2.txt
-  echo flirt -in ${datadir}/${sub}/roi/fnirted_standard2highres_rDAI -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/roi/standard2func_rDAI >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmaths ${datadir}/${sub}/roi/standard2func_rDAI -thr 0.5 -bin ${datadir}/${sub}/roi/standard2func_rDAI >> ${basedir}/logs/${sub}_s2.txt
+  echo flirt -in ${basedir}/b_roi/lDAI -ref ${datadir}/${sub}/data/mprage_brain -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/standard2highres.mat -out ${datadir}/${sub}/roi/standard2highres_lDAI >> ${basedir}/logs/${sub}_s02.txt
+  echo applywarp --ref=${datadir}/${sub}/data/mprage_brain --in=${datadir}/${sub}/roi/standard2highres_lDAI --out=${datadir}/${sub}/roi/fnirted_standard2highres_lDAI >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmaths ${datadir}/${sub}/roi/fnirted_standard2highres_lDAI -thr 0.5 -bin ${datadir}/${sub}/roi/fnirted_standard2highres_lDAI >> ${basedir}/logs/${sub}_s02.txt
+  echo flirt -in ${datadir}/${sub}/roi/fnirted_standard2highres_lDAI -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/roi/standard2func_lDAI >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmaths ${datadir}/${sub}/roi/standard2func_lDAI -thr 0.5 -bin ${datadir}/${sub}/roi/standard2func_lDAI >> ${basedir}/logs/${sub}_s02.txt
+  echo flirt -in ${basedir}/b_roi/rDAI -ref ${datadir}/${sub}/data/mprage_brain -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/standard2highres.mat -out ${datadir}/${sub}/roi/standard2highres_rDAI >> ${basedir}/logs/${sub}_s02.txt
+  echo applywarp --ref=${datadir}/${sub}/data/mprage_brain --in=${datadir}/${sub}/roi/standard2highres_rDAI --out=${datadir}/${sub}/roi/fnirted_standard2highres_rDAI >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmaths ${datadir}/${sub}/roi/fnirted_standard2highres_rDAI -thr 0.5 -bin ${datadir}/${sub}/roi/fnirted_standard2highres_rDAI >> ${basedir}/logs/${sub}_s02.txt
+  echo flirt -in ${datadir}/${sub}/roi/fnirted_standard2highres_rDAI -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/roi/standard2func_rDAI >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmaths ${datadir}/${sub}/roi/standard2func_rDAI -thr 0.5 -bin ${datadir}/${sub}/roi/standard2func_rDAI >> ${basedir}/logs/${sub}_s02.txt
 
-  echo flirt -in ${basedir}/b_roi/lVAI -ref ${datadir}/${sub}/data/mprage_brain -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/standard2highres.mat -out ${datadir}/${sub}/roi/standard2highres_lVAI >> ${basedir}/logs/${sub}_s2.txt
-  echo applywarp --ref=${datadir}/${sub}/data/mprage_brain --in=${datadir}/${sub}/roi/standard2highres_lVAI --out=${datadir}/${sub}/roi/fnirted_standard2highres_lVAI >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmaths ${datadir}/${sub}/roi/fnirted_standard2highres_lVAI -thr 0.5 -bin ${datadir}/${sub}/roi/fnirted_standard2highres_lVAI >> ${basedir}/logs/${sub}_s2.txt
-  echo flirt -in ${datadir}/${sub}/roi/fnirted_standard2highres_lVAI -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/roi/standard2func_lVAI >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmaths ${datadir}/${sub}/roi/standard2func_lVAI -thr 0.5 -bin ${datadir}/${sub}/roi/standard2func_lVAI >> ${basedir}/logs/${sub}_s2.txt
-  echo flirt -in ${basedir}/b_roi/rVAI -ref ${datadir}/${sub}/data/mprage_brain -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/standard2highres.mat -out ${datadir}/${sub}/roi/standard2highres_rVAI >> ${basedir}/logs/${sub}_s2.txt
-  echo applywarp --ref=${datadir}/${sub}/data/mprage_brain --in=${datadir}/${sub}/roi/standard2highres_rVAI --out=${datadir}/${sub}/roi/fnirted_standard2highres_rVAI >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmaths ${datadir}/${sub}/roi/fnirted_standard2highres_rVAI -thr 0.5 -bin ${datadir}/${sub}/roi/fnirted_standard2highres_rVAI >> ${basedir}/logs/${sub}_s2.txt
-  echo flirt -in ${datadir}/${sub}/roi/fnirted_standard2highres_rVAI -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/roi/standard2func_rVAI >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmaths ${datadir}/${sub}/roi/standard2func_rVAI -thr 0.5 -bin ${datadir}/${sub}/roi/standard2func_rVAI >> ${basedir}/logs/${sub}_s2.txt
+  echo flirt -in ${basedir}/b_roi/lVAI -ref ${datadir}/${sub}/data/mprage_brain -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/standard2highres.mat -out ${datadir}/${sub}/roi/standard2highres_lVAI >> ${basedir}/logs/${sub}_s02.txt
+  echo applywarp --ref=${datadir}/${sub}/data/mprage_brain --in=${datadir}/${sub}/roi/standard2highres_lVAI --out=${datadir}/${sub}/roi/fnirted_standard2highres_lVAI >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmaths ${datadir}/${sub}/roi/fnirted_standard2highres_lVAI -thr 0.5 -bin ${datadir}/${sub}/roi/fnirted_standard2highres_lVAI >> ${basedir}/logs/${sub}_s02.txt
+  echo flirt -in ${datadir}/${sub}/roi/fnirted_standard2highres_lVAI -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/roi/standard2func_lVAI >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmaths ${datadir}/${sub}/roi/standard2func_lVAI -thr 0.5 -bin ${datadir}/${sub}/roi/standard2func_lVAI >> ${basedir}/logs/${sub}_s02.txt
+  echo flirt -in ${basedir}/b_roi/rVAI -ref ${datadir}/${sub}/data/mprage_brain -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/standard2highres.mat -out ${datadir}/${sub}/roi/standard2highres_rVAI >> ${basedir}/logs/${sub}_s02.txt
+  echo applywarp --ref=${datadir}/${sub}/data/mprage_brain --in=${datadir}/${sub}/roi/standard2highres_rVAI --out=${datadir}/${sub}/roi/fnirted_standard2highres_rVAI >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmaths ${datadir}/${sub}/roi/fnirted_standard2highres_rVAI -thr 0.5 -bin ${datadir}/${sub}/roi/fnirted_standard2highres_rVAI >> ${basedir}/logs/${sub}_s02.txt
+  echo flirt -in ${datadir}/${sub}/roi/fnirted_standard2highres_rVAI -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/roi/standard2func_rVAI >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmaths ${datadir}/${sub}/roi/standard2func_rVAI -thr 0.5 -bin ${datadir}/${sub}/roi/standard2func_rVAI >> ${basedir}/logs/${sub}_s02.txt
 
-  echo flirt -in ${basedir}/b_roi/lPI -ref ${datadir}/${sub}/data/mprage_brain -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/standard2highres.mat -out ${datadir}/${sub}/roi/standard2highres_lPI >> ${basedir}/logs/${sub}_s2.txt
-  echo applywarp --ref=${datadir}/${sub}/data/mprage_brain --in=${datadir}/${sub}/roi/standard2highres_lPI --out=${datadir}/${sub}/roi/fnirted_standard2highres_lPI >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmaths ${datadir}/${sub}/roi/fnirted_standard2highres_lPI -thr 0.5 -bin ${datadir}/${sub}/roi/fnirted_standard2highres_lPI >> ${basedir}/logs/${sub}_s2.txt
-  echo flirt -in ${datadir}/${sub}/roi/fnirted_standard2highres_lPI -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/roi/standard2func_lPI >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmaths ${datadir}/${sub}/roi/standard2func_lPI -thr 0.5 -bin ${datadir}/${sub}/roi/standard2func_lPI >> ${basedir}/logs/${sub}_s2.txt
-  echo flirt -in ${basedir}/b_roi/rPI -ref ${datadir}/${sub}/data/mprage_brain -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/standard2highres.mat -out ${datadir}/${sub}/roi/standard2highres_rPI >> ${basedir}/logs/${sub}_s2.txt
-  applywarp --ref=${datadir}/${sub}/data/mprage_brain --in=${datadir}/${sub}/roi/standard2highres_rPI --out=${datadir}/${sub}/roi/fnirted_standard2highres_rPI >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmaths ${datadir}/${sub}/roi/fnirted_standard2highres_rPI -thr 0.5 -bin ${datadir}/${sub}/roi/fnirted_standard2highres_rPI >> ${basedir}/logs/${sub}_s2.txt
-  echo flirt -in ${datadir}/${sub}/roi/fnirted_standard2highres_rPI -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/roi/standard2func_rPI  >> ${basedir}/logs/${sub}_s2.txt
-  echo fslmaths ${datadir}/${sub}/roi/standard2func_rPI -thr 0.5 -bin ${datadir}/${sub}/roi/standard2func_rPI >> ${basedir}/logs/${sub}_s2.txt
+  echo flirt -in ${basedir}/b_roi/lPI -ref ${datadir}/${sub}/data/mprage_brain -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/standard2highres.mat -out ${datadir}/${sub}/roi/standard2highres_lPI >> ${basedir}/logs/${sub}_s02.txt
+  echo applywarp --ref=${datadir}/${sub}/data/mprage_brain --in=${datadir}/${sub}/roi/standard2highres_lPI --out=${datadir}/${sub}/roi/fnirted_standard2highres_lPI >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmaths ${datadir}/${sub}/roi/fnirted_standard2highres_lPI -thr 0.5 -bin ${datadir}/${sub}/roi/fnirted_standard2highres_lPI >> ${basedir}/logs/${sub}_s02.txt
+  echo flirt -in ${datadir}/${sub}/roi/fnirted_standard2highres_lPI -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/roi/standard2func_lPI >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmaths ${datadir}/${sub}/roi/standard2func_lPI -thr 0.5 -bin ${datadir}/${sub}/roi/standard2func_lPI >> ${basedir}/logs/${sub}_s02.txt
+  echo flirt -in ${basedir}/b_roi/rPI -ref ${datadir}/${sub}/data/mprage_brain -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/standard2highres.mat -out ${datadir}/${sub}/roi/standard2highres_rPI >> ${basedir}/logs/${sub}_s02.txt
+  applywarp --ref=${datadir}/${sub}/data/mprage_brain --in=${datadir}/${sub}/roi/standard2highres_rPI --out=${datadir}/${sub}/roi/fnirted_standard2highres_rPI >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmaths ${datadir}/${sub}/roi/fnirted_standard2highres_rPI -thr 0.5 -bin ${datadir}/${sub}/roi/fnirted_standard2highres_rPI >> ${basedir}/logs/${sub}_s02.txt
+  echo flirt -in ${datadir}/${sub}/roi/fnirted_standard2highres_rPI -ref ${datadir}/${sub}/analysis/prepro.feat/reg/example_func.nii.gz -applyxfm -init ${datadir}/${sub}/analysis/prepro.feat/reg/highres2example_func.mat -out ${datadir}/${sub}/roi/standard2func_rPI  >> ${basedir}/logs/${sub}_s02.txt
+  echo fslmaths ${datadir}/${sub}/roi/standard2func_rPI -thr 0.5 -bin ${datadir}/${sub}/roi/standard2func_rPI >> ${basedir}/logs/${sub}_s02.txt
 
 done
 }
