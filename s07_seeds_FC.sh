@@ -30,19 +30,19 @@ do
   feat ${datadir}/${sub}/analysis/rVAI.fsf
   feat ${datadir}/${sub}/analysis/rPI.fsf
   
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/lDAI.fsf '>' ${datadir}/${sub}/analysis/lDAI.fsf >> ${basedir}/logs/${sub}_s7.txt
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/lVAI.fsf '>' ${datadir}/${sub}/analysis/lVAI.fsf >> ${basedir}/logs/${sub}_s7.txt
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/lPI.fsf '>' ${datadir}/${sub}/analysis/lPI.fsf >> ${basedir}/logs/${sub}_s7.txt
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/rDAI.fsf '>' ${datadir}/${sub}/analysis/rDAI.fsf >> ${basedir}/logs/${sub}_s7.txt
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/rVAI.fsf '>' ${datadir}/${sub}/analysis/rVAI.fsf >> ${basedir}/logs/${sub}_s7.txt
-  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/rPI.fsf '>' ${datadir}/${sub}/analysis/rPI.fsf >> ${basedir}/logs/${sub}_s7.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/lDAI.fsf '>' ${datadir}/${sub}/analysis/lDAI.fsf >> ${basedir}/logs/${sub}_s07.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/lVAI.fsf '>' ${datadir}/${sub}/analysis/lVAI.fsf >> ${basedir}/logs/${sub}_s07.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/lPI.fsf '>' ${datadir}/${sub}/analysis/lPI.fsf >> ${basedir}/logs/${sub}_s07.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/rDAI.fsf '>' ${datadir}/${sub}/analysis/rDAI.fsf >> ${basedir}/logs/${sub}_s07.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/rVAI.fsf '>' ${datadir}/${sub}/analysis/rVAI.fsf >> ${basedir}/logs/${sub}_s07.txt
+  echo 'sed' -e "s/sub25632/${sub}/g" ${basedir}/design/rPI.fsf '>' ${datadir}/${sub}/analysis/rPI.fsf >> ${basedir}/logs/${sub}_s07.txt
 
-  echo feat ${datadir}/${sub}/analysis/lDAI.fsf >> ${basedir}/logs/${sub}_s7.txt
-  echo feat ${datadir}/${sub}/analysis/lVAI.fsf >> ${basedir}/logs/${sub}_s7.txt
-  echo feat ${datadir}/${sub}/analysis/lPI.fsf >> ${basedir}/logs/${sub}_s7.txt
-  echo feat ${datadir}/${sub}/analysis/rDAI.fsf >> ${basedir}/logs/${sub}_s7.txt
-  echo feat ${datadir}/${sub}/analysis/rVAI.fsf >> ${basedir}/logs/${sub}_s7.txt
-  echo feat ${datadir}/${sub}/analysis/rPI.fsf >> ${basedir}/logs/${sub}_s7.txt
+  echo feat ${datadir}/${sub}/analysis/lDAI.fsf >> ${basedir}/logs/${sub}_s07.txt
+  echo feat ${datadir}/${sub}/analysis/lVAI.fsf >> ${basedir}/logs/${sub}_s07.txt
+  echo feat ${datadir}/${sub}/analysis/lPI.fsf >> ${basedir}/logs/${sub}_s07.txt
+  echo feat ${datadir}/${sub}/analysis/rDAI.fsf >> ${basedir}/logs/${sub}_s07.txt
+  echo feat ${datadir}/${sub}/analysis/rVAI.fsf >> ${basedir}/logs/${sub}_s07.txt
+  echo feat ${datadir}/${sub}/analysis/rPI.fsf >> ${basedir}/logs/${sub}_s07.txt
    
 done
 }
