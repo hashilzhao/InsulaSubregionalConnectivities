@@ -1,5 +1,5 @@
 # InsulaSubregionalConnectivities
-Code accompanying the paper: Zhao, H. et.al. (202x). The insula from a somatic marker hypothesis perspective: Three distinct functional subdivisions. xx, xx, xxxx.
+Code accompanying the paper: Zhao, H. et.al. (2022). How distinct functional insular subdivisions mediate interacting neurocognitive systems. Cerebral Cortex, accepted.
 # Insular subregional functional connectivity analysis 
 The processing pipeline of functional connectivity were based on the below codes step by step:
 
